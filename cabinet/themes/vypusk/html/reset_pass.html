@@ -1,0 +1,44 @@
+
+<div class="form-container reset">
+
+    <h1>Сброс пароля</h1>
+
+    <form method="post" onsubmit="login.resetpassApprove(this, '[TOKEN]');return false;">
+        <!-- BEGIN reset_allow -->
+        <div class="form-description">
+            Для завершения, введите новый пароль
+        </div>
+
+        <div class="error" style="display: none"></div>
+        <div class="success" style="display: none"></div>
+
+        <div class="form-controls">
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" required="required" autofocus id="input-password">
+                <label for="input-password">Новый пароль</label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control" required="required" id="input-password-2" >
+                <label for="input-password-2">Подтверждение пароля</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-auth">
+                Продолжить
+                <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>
+            </button>
+        </div>
+        <!-- END reset_allow -->
+
+
+        <!-- BEGIN reset_deny -->
+        <div class="form-description">
+            Ошибка. Возможно ссылка устарела. Повторите процедуру восстановления пароля.
+        </div>
+        <!-- END reset_deny -->
+    </form>
+
+    <div class="nav-link-container">
+        <a href="[BACK_URL]"><i class="fa fa-arrow-left"></i> Вернуться назад</a>
+    </div>
+</div>

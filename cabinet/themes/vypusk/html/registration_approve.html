@@ -1,0 +1,35 @@
+
+<div class="form-container registration-approve">
+
+    <h1>[TITLE]</h1>
+
+    <form method="post">
+        <!-- BEGIN success -->
+        <!--BEGIN message -->
+        <p class="success">[MESSAGE]</p>
+        <!-- END message -->
+        <!-- BEGIN loader -->
+        <p class="in"><i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i> Загрузка...</p>
+        <!-- END loader -->
+        <script>
+            (function() {
+                setTimeout(function () {
+                    var back_url = getParameterByName('back_url', document.location.href);
+                    document.location.href = back_url ? back_url : '/';
+                }, 1500);
+            })();
+        </script>
+        <!-- END success -->
+
+
+        <!-- BEGIN error -->
+        <p class="error">
+            Не удалось подтвердить вашу регистрацию. Возможно вы сделали это ранее.
+        </p>
+        <!-- END error -->
+    </form>
+
+    <div class="nav-link-container">
+        <a href="[BACK_URL]"><i class="fa fa-arrow-left"></i> Вернуться назад</a>
+    </div>
+</div>

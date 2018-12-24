@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="cabinet">
+
+    <title>[SYSTEM_NAME] - [TITLE]</title>
+
+    <!--[if IE]>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <![endif]-->
+    <link rel="icon" type="image/png" href="/favicon.png"/>
+    <link href="/cabinet/themes/vypusk/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/cabinet/themes/vypusk/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/cabinet/themes/vypusk/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="/cabinet/themes/vypusk/css/sweetalert2.min.css" type="text/css" rel="stylesheet" />
+    <link href="/cabinet/themes/vypusk/css/main.css?_=4" type="text/css" rel="stylesheet" />
+
+
+    <script src="/cabinet/themes/vypusk/js/jquery-3.2.1.min.js"></script>
+    <script src="/cabinet/themes/vypusk/js/jquery-ui.min.js"></script>
+    <script src="/cabinet/themes/vypusk/js/bootstrap.min.js"></script>
+    <script src="/cabinet/themes/vypusk/js/sweetalert2.min.js"></script>
+    <script src="/cabinet/themes/vypusk/js/md5.js"></script>
+    <script src="/cabinet/themes/vypusk/js/plugins.js?_=1"></script>
+    <script src="/cabinet/themes/vypusk/js/main.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<section>
+    <div id="header">
+        <header class="container">
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse-menu" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="https://vypusk.ru/" class="navbar-brand">
+                            <div class="logo"></div>
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-left navbar-collapse-menu">
+                        <ul class="nav navbar-nav plugins">
+                            <!-- BEGIN plugin -->
+                            <li class="plugin plugin-[NAME]" data-name="[NAME]">
+                                <a href="/#plugin=[NAME]"
+                                   onclick="if (event.button === 0 && ! event.ctrlKey) load('/#plugin=[NAME]');"
+                                >[TITLE]</a>
+                            </li>
+                            <!-- END plugin -->
+                        </ul>
+                    </div>
+
+                    <div class="collapse navbar-collapse navbar-right navbar-collapse-menu">
+
+                        <!-- BEGIN is_not_auth -->
+                        <a href="/" class="navbar-btn btn-login">
+                            Войти
+                            <img src="/cabinet/themes/vypusk/img/user.svg" alt="user" width="25">
+                        </a>
+                        <!-- END is_not_auth -->
+
+                        <!-- BEGIN is_auth -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown navbar-user">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                    [NAME] <img src="/cabinet/themes/vypusk/img/user.svg" alt="usr" width="25">
+                                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/#plugin=profile"><i class="fa fa-user"></i> Профиль</a></li>
+                                    <li><a href="/?logout=1"><i class="fa fa-sign-out"></i> Выйти</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- END is_auth -->
+                    </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+
+    <div class="root-container">
+        <div class="container">
+            <div id="plugin-content">[CONTENT]</div>
+        </div>
+    </div>
+    <div class="buffer-content"></div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 information">
+                <div class="copyright">
+                    <span>Компания «Выпуск.РУ» </span><br>
+                    <span>
+                        Выпускные, свадебные, <br>
+                        корпоративные фотоальбомы. © <span class="year">2017</span>
+                    </span>
+                </div>
+
+                <ul class="text-left list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/vypusk.ru/" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://vk.com/vypuskgroup" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/vypuskru/" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6 contacts">
+                <p class="text-right">
+                    <span style="font-weight: bold;">+7(495) 7477470</span><br>
+                    <span style="font-weight: bold;"> +7(495) 6494187</span><br>
+                    г. Москва, проспект Маршала Жукова <br>
+                    д. 2/2. стр. 1, офис 403 <br>
+                    ИП Комов М.Ю.<br>
+                    ИНН 500716147079<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

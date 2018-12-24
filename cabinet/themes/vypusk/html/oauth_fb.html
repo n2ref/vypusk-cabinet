@@ -1,0 +1,72 @@
+
+<div class="container">
+
+    <br><br><br>
+    <div id="fb-error" class="alert alert-danger" style="display: none"></div>
+
+    <script>
+        var fb_login = {
+
+            /**
+             *
+             */
+            checkUrl: function() {
+                if (window.location.hash.indexOf('access_token=') !== -1) {
+                    var raw_params = window.location.hash.replace(/^\#/, '').split('&'),
+                            params = {},
+                            param = [];
+                    for (var i = 0; i < raw_params.length; i++) {
+                        param = raw_params[i].split('=');
+                        params[param[0]] = param[1];
+                    }
+
+                    if (params.access_token) {
+                        fb_login.saveFacebook(params.access_token, params.state);
+                    } else {
+                        window.location.href = '/'
+                    }
+                // Пользователь нажал на кнопку отмены
+                } else {
+                    window.location.href = '/'
+                }
+            },
+
+
+            /**
+             * @param {string} access_token
+             * @param {string} state
+             */
+            saveFacebook: function(access_token, state) {
+
+                $.ajax({
+                    url: '/oauth/fb',
+                    method: 'post',
+                    dataType: 'json',
+                    data: {
+                        access_token: access_token,
+                        state: state
+                    },
+                    success: function(data) {
+                        if (data.status === 'success') {
+                            window.location.href = window.location.origin + '/' + (data.back_url ? data.back_url : '');
+
+                        } else {
+                            $('#fb-error').show()
+                                .text(data.error_message ? data.error_message : 'Ой! По какой-то причине не удалось добавить вашу соц сеть. Попробуйте пожалуйста еще раз.');
+                        }
+                    },
+                    error: function(){
+                        $('#fb-error').show()
+                            .text('Ой! К сожалению, по техническим причинам, мы не можем сейчас авторизовать вас через эту соц.сеть. Попробуйте пожалуйста позже.');
+
+                    }, complete: function() {
+                        preloader.hide();
+                    }
+                });
+            }
+        };
+
+        preloader.show();
+        fb_login.checkUrl();
+    </script>
+</div>

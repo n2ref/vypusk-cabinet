@@ -1,0 +1,38 @@
+
+<div class="form-container forgot">
+
+    <h1>Восстановление пароля</h1>
+
+    <form method="post" onsubmit="login.forgotPassword(this);return false">
+        <p class="form-description">
+            Ссылка на восстановление пароля будет отправлена на указанный при регистрации почтовый ящик.
+        </p>
+
+        <div class="error" style="display: none"></div>
+        <div class="success" style="display: none"></div>
+
+        <div class="form-controls">
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" required="required" autofocus id="input-email">
+                <label for="input-email">E-mail, указанный при регистрации</label>
+                <span class="error-message"></span>
+            </div>
+
+            <!-- BEGIN recaptcha -->
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="[PUBLIC_KEY]"></div>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+            </div>
+            <!-- END recaptcha -->
+
+            <button type="submit" class="btn btn-primary btn-auth">
+                Восстановить пароль
+                <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>
+            </button>
+        </div>
+    </form>
+
+    <div class="nav-link-container">
+        <a href="[BACK_URL]"><i class="fa fa-arrow-left"></i> Вернуться назад</a>
+    </div>
+</div>
