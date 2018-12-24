@@ -1,0 +1,52 @@
+<div class="alert alert-warning">
+    <h3>Внимание!</h3>
+    <p>Перед принятием документов, пожалуйста, ознакомьтесь с ними.</p>
+</div>
+
+
+<div class="panel panel-default">
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="1">№</th>
+            <th>Название документа</th>
+            <th width="150">Дата</th>
+            <th width="150">Просмотр</th>
+            <th width="155">Состояние</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- BEGIN document -->
+        <tr>
+            <td title="[DOCUMENT_ID]">[#]</td>
+            <th>[TITLE]</th>
+            <td>[DATE_DOCUMENT]</td>
+            <td onclick="event.cancelBubble = true">
+                <a href="raw/orders/document/pdf?order_id=[ORDER_ID]&document_id=[DOCUMENT_ID]"
+                   target="_blank">
+                    Открыть PDF
+                </a>
+            </td>
+            <td>
+                <!-- BEGIN status_null -->
+                <button class="btn btn-xs btn-success" type="button" onclick="OrdersDocuments.sign('[ORDER_ID]', '[DOCUMENT_ID]', 'accepted')">
+                    Принять
+                </button>
+                <button class="btn btn-xs btn-warning" type="button" onclick="OrdersDocuments.sign('[ORDER_ID]', '[DOCUMENT_ID]', 'rejected')">
+                    Отклонить
+                </button>
+                <!-- END status_null -->
+                <!-- BEGIN status_accepted -->
+                <span class="text-success">Принято</span>
+                <!-- END status_accepted -->
+                <!-- BEGIN status_rejected -->
+                <span class="text-danger">Отклонено</span>
+                <!-- END status_rejected -->
+            </td>
+        </tr>
+        <!-- END document -->
+
+        </tbody>
+    </table>
+</div>

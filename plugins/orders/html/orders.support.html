@@ -1,0 +1,36 @@
+<div class="chat">
+    <div class="chat-history">
+        <ul>
+            <!-- BEGIN messages -->
+            <!-- BEGIN message -->
+            <li class="clearfix">
+                <div class="message-data align-right">
+                    <span class="message-data-time" >[DATE_SEND]</span> &nbsp; &nbsp;
+                    <span class="message-data-name" >Я</span> <i class="fa fa-circle me"></i>
+                </div>
+                <div class="message other-message float-right">[MESSAGE]</div>
+            </li>
+            <!-- END message -->
+
+            <!-- BEGIN response -->
+            <li>
+                <div class="message-data">
+                    <span class="message-data-name"><i class="fa fa-circle online"></i>[NAME]</span>
+                    <span class="message-data-time">[DATE_SEND]</span>
+                </div>
+                <div class="message my-message">[MESSAGE]</div>
+            </li>
+            <!-- END response -->
+            <!-- END messages -->
+        </ul>
+    </div>
+
+
+    <div class="chat-message">
+        <textarea name="message" class="message-area" placeholder="Введите сообщение" rows="2"></textarea>
+        <div class="message-submit">
+            <button class="btn btn-primary">Отправить</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+
+<h3>Версия макета [VERSION]</h3>
+<h4 class="text-muted">[SECTION_TITLE]</h4>
+<br>
+
+<div>
+    <nav class="toolbar toolbar-default">
+        <div class="container-fluid">
+            <a href="/#plugin=orders&order_id=[ORDER_ID]&action=makets&maket_id=[MAKET_ID]" class="btn btn-default toolbar-btn">Назад</a>
+            <a href="/raw/orders/page/pdf?section_id=[SECTION_ID]" target="_blank"
+               class="btn btn-default toolbar-btn">Скачать PDF</a>
+            <div class="pull-right">
+                <button class="btn btn-warning toolbar-btn"
+                        onclick="OrdersMakets.cancelled('[SECTION_ID]', '[ORDER_ID]', '[MAKET_ID]')">Отправить на доработку</button>
+                <button class="btn btn-success toolbar-btn"
+                        onclick="OrdersMakets.accepted('[SECTION_ID]', '[ORDER_ID]', '[MAKET_ID]')">Утвердить раздел</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="clearfix"></div>
+</div>
+
+
+<table class="maket-pages">
+    <!-- BEGIN page -->
+    <tr class="maket-page">
+        <td valign="top" width="1%">
+            <b class="maket-page-number">[#]</b>
+        </td>
+        <td valign="top" width="320">
+            <a class="maket-page-img" href="/raw/orders/page/image/full?image_id=[IMAGE_ID]" data-lightbox="section-[SECTION_ID]" data-title="Страница [#]">
+                <img src="/raw/orders/page/image?image_id=[IMAGE_ID]" alt="page" class="img-thumbnail img-responsive">
+            </a>
+        </td>
+        <td valign="top" class="maket-page-comment">
+            <!-- BEGIN connect_edit -->
+            <form class="form" onsubmit="OrdersMakets.send(this, '[ORDER_ID]', '[SECTION_ID]'); return false">
+                <input type="hidden" name="page_id" value="[ID]">
+
+                <div class="form-group">
+                    <textarea class="form-control maket-page-text" name="comment" placeholder="Комментарий">[COMMENT]</textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="fileup-theme2">
+                        <div id="upload-queue" class="fileup-queue"></div>
+
+                        <div class="btn btn-default fileup-btn">
+                            <input type="file" id="upload" multiple accept="image/*">
+                            <textarea id="upload-files" name="images[files]" style="display: none">[FILES]</textarea>
+                            <textarea id="upload-files-remove" name="images[files_remove]" style="display: none"></textarea>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <script>
+                        $.fileup({
+                            url: '/data/orders/upload/section/comment?section_id=[SECTION_ID]',
+                            inputID: 'upload',
+                            queueID: 'upload-queue',
+                            files: [IMAGES],
+                            autostart: true,
+                            sizeLimit: 8388608,
+                            fieldName: 'comment_image',
+                            lang: 'ru',
+                            templateFile:
+                                '<div id="fileup-[INPUT_ID]-[FILE_NUM]" class="fileup-file [TYPE]" style="background-image: url(\'[PREVIEW_SRC]\');">' +
+                                '<i class="fileup-remove fa fa-times" onclick="$.fileup(\'[INPUT_ID]\', \'remove\', \'[FILE_NUM]\');" title="[REMOVE]"></i>' +
+                                '<div class="fileup-container">' +
+                                '<div class="fileup-controls">' +
+                                '<span class="fileup-upload" onclick="$.fileup(\'[INPUT_ID]\', \'upload\', \'[FILE_NUM]\');">[UPLOAD]</span>' +
+                                '<span class="fileup-abort" onclick="$.fileup(\'[INPUT_ID]\', \'abort\', \'[FILE_NUM]\');" style="display:none">[ABORT]</span>' +
+                                '</div>' +
+                                '<div class="fileup-result"></div>' +
+                                '<div class="fileup-progress">' +
+                                '<div class="fileup-progress-bar"></div>' +
+                                '</div>' +
+                                '</div>' +
+                                '<div class="fileup-clear"></div>' +
+                                '</div>',
+                            onSuccess : function (response, file_number, file) {
+                                OrdersMakets.onSuccess(response, file_number, file);
+                            },
+                            onRemove : function (fileWrapper, total, file_number) {
+                                OrdersMakets.onRemove(fileWrapper, total, file_number);
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Сохранить
+                        <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>
+                    </button>
+                    <a href="/#plugin=orders&order_id=[ORDER_ID]&action=makets&section_id=[SECTION_ID]"
+                       class="btn btn-default">Отмена</a>
+                </div>
+            </form>
+            <!-- END connect_edit -->
+
+            <!-- BEGIN connect_read -->
+            <div>
+                <textarea class="form-control maket-page-text" readonly>[COMMENT]</textarea>
+
+                <div class="form-group">
+                    <div class="comment-files">
+                        <!-- BEGIN image -->
+                        <img src="/raw/orders/page/image?image_id=[IMAGE_ID]" alt="page" class="img-thumbnail img-responsive">
+                        <!-- END image -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <a href="/#plugin=orders&order_id=[ORDER_ID]&action=makets&section_id=[SECTION_ID]&page_edit_id=[ID]"
+                       class="btn btn-info">Добавить комментарий</a>
+                </div>
+            </div>
+            <!-- END connect_read -->
+        </td>
+    </tr>
+    <!-- END page -->
+</table>

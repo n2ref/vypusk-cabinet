@@ -1,0 +1,54 @@
+<div class="alert alert-info">
+    <h4>Небольшое замечание</h4>
+    После того как вы оплатите счета, нашим менеджерам необходимо будет проверить это.<br>
+    Это может занять некоторое время. Обычно около часа.
+</div>
+
+
+<div class="panel panel-default">
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="1">№</th>
+            <th width="140">Сумма</th>
+            <th>Назначение платежа</th>
+            <th width="90">Оплата</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- BEGIN payment -->
+        <tr>
+            <td title="[PAYMENT_ID]">[NUM]</td>
+            <th>[PRICE_FORMAT] [CURRENCY]</th>
+            <td>[NOTE]</td>
+            <td>
+                <!-- BEGIN status_pending -->
+                <form class="order-online-form" action="[PAYMENT_URL]" method="post">
+
+                    <input type="hidden" name="shopId" value="[SHOP_ID]">
+                    <input type="hidden" name="scid" value="[SCID]">
+                    <input type="hidden" name="sum" value="[PRICE]">
+                    <input type="hidden" name="paymentId" value="[PAYMENT_ID]">
+                    <input type="hidden" name="paymentType" value="">
+                    <input type="hidden" name="customerNumber" value="[USER_PHONE]">
+                    <input type="hidden" name="custName" value="[USER_NAME]">
+                    <input type="hidden" name="orderNumber" value="[ORDER_AGREEMENT]_V[PAYMENT_ID]">
+                    <input type="hidden" name="custEmail" value="[USER_EMAIL]">
+                    <input type="hidden" name="orderDetails" value="[PAYMENT_NOTE]">
+                    <input type="hidden" name="shopSuccessURL" value="[SUCCESS_URL]">
+                    <input type="hidden" name="shopFailURL" value="[FAIL_URL]">
+
+                    <button type="submit" class="btn btn-success">Оплатить</button>
+                </form>
+                <!-- END status_pending -->
+                <!-- BEGIN status_completed -->
+                <span class="text-success">Оплачено</span>
+                <!-- END status_completed -->
+            </td>
+        </tr>
+        <!-- END payment -->
+
+        </tbody>
+    </table>
+</div>

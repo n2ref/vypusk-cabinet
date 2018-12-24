@@ -1,0 +1,89 @@
+
+<!-- BEGIN status_pending -->
+<div class="alert alert-info">
+    <span class="pull-left">Заполните данные макета и отправьте их на проверку</span>
+    <button class="btn btn-info pull-right">Отправить</button>
+    <div class="clearfix"></div>
+</div>
+<!-- END status_pending -->
+
+<!-- BEGIN status_moderate -->
+<div class="alert alert-success">
+    Данные макета отправлены на проверку. <br>
+    Ожидайте уведомления после проверки
+</div>
+<!-- END status_moderate -->
+
+
+<!-- BEGIN section -->
+<div class="makets-1-section">
+    <h3>[SECTION_TITLE]</h3>
+    <h5 class="text-muted">[PAGE_COUNT]</h5>
+
+    <!-- BEGIN section_edit -->
+    <form class="form-horizontal section-edit" onsubmit="">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Фотографии</label>
+            <div class="col-sm-9">
+                <div class="fileup-files"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Текст на страницу</label>
+            <div class="col-sm-9">
+                <textarea class="form-control section-page-text" name="text">[TEXT]</textarea>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Комментарий</label>
+            <div class="col-sm-9">
+                <textarea class="form-control section-comment" name="text">[COMMENT]</textarea>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a href="/[URL]" class="btn btn-default">Отмена</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+    <!-- END section_edit -->
+
+    <!-- BEGIN section_read -->
+    <div class="section-read form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Фотографии</label>
+            <div class="col-sm-9">
+                <div class="fileup-files"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Текст на страницу</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">[TEXT]</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Комментарий</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">[COMMENT]</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <a href="/[URL]" class="btn btn-info">Редактировать</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- END section_read -->
+
+</div>
+<!-- END section -->

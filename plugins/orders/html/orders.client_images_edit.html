@@ -1,0 +1,67 @@
+
+<form class="form-horizontal section-edit" onsubmit="OrdersClientImages.send(this); return false">
+    <input type="hidden" name="order_id" value="[ORDER_ID]">
+    <input type="hidden" name="section" value="[SECTION_NAME]">
+    <input type="hidden" name="id" value="[ID]">
+
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Фотографии</label>
+        <div class="col-sm-9">
+
+            <div class="fileup-theme2">
+                <div id="upload-[SECTION_NAME]-queue" class="fileup-queue"></div>
+
+                <div class="btn btn-default fileup-btn">
+                    <input type="file" id="upload-[SECTION_NAME]" multiple accept="image/*">
+                    <textarea id="upload-files-[SECTION_NAME]" name="files" style="display: none">[FILES]</textarea>
+                    <textarea id="upload-files-remove-[SECTION_NAME]" name="files_remove" style="display: none"></textarea>
+                </div>
+            </div>
+
+            <script>
+                $.fileup({
+                    url: '/data/orders/upload/client/material',
+                    inputID: 'upload-[SECTION_NAME]',
+                    queueID: 'upload-[SECTION_NAME]-queue',
+                    files: [IMAGES],
+                    autostart: true,
+                    sizeLimit: 8388608,
+                    fieldName: 'client_image',
+                    lang: 'ru',
+                    templateFile: OrdersClientImages.fileupTemplate,
+                    onSuccess : function (response, file_number, file) {
+                        OrdersClientImages.onSuccess(response, file_number, file, '[SECTION_NAME]');
+                    },
+                    onRemove : function (fileWrapper, total, file_number) {
+                        OrdersClientImages.onRemove(fileWrapper, total, file_number, '[SECTION_NAME]');
+                    }
+                });
+            </script>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Текст на страницу</label>
+        <div class="col-sm-9">
+            <textarea class="form-control section-page-text" name="text">[TEXT]</textarea>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Комментарий</label>
+        <div class="col-sm-9">
+            <textarea class="form-control section-comment" name="comment">[COMMENT]</textarea>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <button type="submit" class="btn btn-primary">
+                Сохранить
+                <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</form>

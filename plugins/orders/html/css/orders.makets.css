@@ -1,0 +1,202 @@
+.maket-pages {
+    margin-top: 35px;
+}
+.maket-page {
+    position: relative;
+}
+.maket-page td {
+    padding-bottom: 55px;
+}
+.maket-page .maket-page-number {
+    font-size: 16px;
+}
+.maket-page .maket-page-img {
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+.maket-page .maket-page-img:hover:after {
+    opacity: .8;
+}
+.maket-page .maket-page-img:after {
+    content: "\f00e";
+    font-family: FontAwesome;
+    color: #03A9F4;
+    position: absolute;
+    font-size: 4em;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    filter: alpha(opacity=60);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    opacity: 0;
+}
+.maket-page .maket-page-img img {
+    max-height: 300px;
+    max-width: 300px;
+}
+.maket-page .maket-page-img:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    filter: alpha(opacity=40);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    opacity: 0.6;
+}
+.maket-page .maket-page-comment {
+    padding-left: 20px;
+}
+.maket-page .maket-page-text {
+    min-height: 90px;
+    margin: 0!important;
+}
+.maket-page .comment-files {
+    margin-top: 15px;
+}
+.maket-page .comment-files img {
+    width: 90px;
+    height: 65px;
+    margin-bottom: 6px;
+}
+
+
+
+.toolbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.toolbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+.toolbar-btn {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+
+.fileup-theme2 .fileup-file {
+    overflow: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    padding: 0;
+}
+.fileup-theme2 .fileup-queue {
+    float: none;
+    display: inline;
+}
+.fileup-theme2 .fileup-file.fileup-image .fileup-container,
+.fileup-theme2 .fileup-file.fileup-doc .fileup-container {
+    margin-left: 0;
+    position: absolute;
+    bottom: 0;
+    padding: 0 8px 0 8px;
+    background-color: #00000073;
+    width: 100%;
+}
+.fileup-theme2 .fileup-file .fileup-container .fileup-name {
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: 1px 1px #4a4a4a;
+    height: 20px;
+    line-height: 20px;
+}
+.fileup-file .fileup-controls {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+.fileup-file .fileup-controls .fileup-upload,
+.fileup-file .fileup-controls .fileup-abort {
+    color: #BBDEFB;
+    text-shadow: 1px 1px #465156;
+}
+.fileup-theme2 .fileup-file .fileup-remove {
+    cursor: pointer;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #888;
+    border-radius: 100%;
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+    color: white;
+}
+.fileup-progress-bar {
+    background-color: #03A9F4;
+}
+.fileup-theme2 .fileup-file .fileup-result.fileup-error {
+    color: #FF9800;
+    position: static;
+    font-size: 10px;
+    background: none;
+    height: auto;
+    text-shadow: 0 0 #71321e;
+    margin-bottom: 6px;
+}
+.fileup-file .fileup-result.fileup-success {
+    color: #4cae4c;
+    font-size: 10px;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px #003102;
+}
+
+
+.fileup-theme2 .fileup-file {
+    width: 90px;
+    height: 65px;
+}
+.fileup-theme2 .fileup-btn {
+    width: 65px;
+    height: 65px;
+}
+.fileup-theme2 .fileup-btn::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    border-radius: 4px;
+    background-color: #bdbdbd;
+    width: 5px;
+    margin-left: -2px;
+    left: 50%;
+    top: 15px;
+    bottom: 15px;
+    z-index: 9;
+}
+.fileup-theme2 .fileup-btn::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    border-radius: 4px;
+    background-color: #bdbdbd;
+    height: 5px;
+    margin-top: -5px;
+    top: 53%;
+    left: 15px;
+    right: 15px;
+    z-index: 9;
+}
+.fileup-theme2 .fileup-progress {
+    width: 88px;
+}

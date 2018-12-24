@@ -1,0 +1,38 @@
+<br>
+
+<h3>Список ваших заказов</h3>
+<hr>
+<br>
+
+<div class="panel panel-default">
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="25"></th>
+            <th width="130">Номер заказа</th>
+            <th>Класс/Группа</th>
+            <th width="150">Состояние</th>
+            <th width="150">Стоимость</th>
+            <th width="150">Оплачено</th>
+            <th width="150">К оплате</th>
+            <th width="140">Дата создания</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- BEGIN orders -->
+        <tr onclick="load('/?plugin=orders&order_id=[ID]');">
+            <th><i class="fa fa-picture-o"></i></th>
+            <th>[NUM]</th>
+            <td>[GROUP_NAME]</td>
+            <td>[STATUS]</td>
+            <td>[TOTAL_PRICE]</td>
+            <td>[TOTAL_PAYMENTS]</td>
+            <td>[TOTAL_DIFF]</td>
+            <td>[DATE_CREATED]</td>
+        </tr>
+        <!-- END orders -->
+
+        </tbody>
+    </table>
+</div>

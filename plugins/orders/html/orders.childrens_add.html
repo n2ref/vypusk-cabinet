@@ -1,0 +1,20 @@
+
+<form class="form-horizontal" onsubmit="OrdersChildrens.addChildrens(this, '[ORDER_ID]'); return false;">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Класс/группа</label>
+        <div class="col-sm-4">
+            <select class="form-control" name="group" id="group"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Добавьте фамилии и имена учеников</label>
+        <div class="col-sm-4">
+            <textarea name="childrens" class="form-control" placeholder="Каждый ученик с новой строки" rows="10"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-4">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </div>
+    </div>
+</form>

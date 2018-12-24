@@ -1,0 +1,42 @@
+<div>
+    <h3 class="pull-left">Версия макета [VERSION]</h3>
+    <div class="pull-right">
+        <a href="/#plugin=orders&order_id=[ORDER_ID]&action=makets" class="btn btn-default">Назад</a>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<br>
+
+<div class="panel panel-default">
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="1">№</th>
+            <th>Название раздела</th>
+            <th width="170">Количество страниц</th>
+            <th width="165">Состояние</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- BEGIN section -->
+        <tr onclick="load('/?plugin=orders&order_id=[ORDER_ID]&action=makets&section_id=[SECTION_ID]');">
+            <td title="[SECTION_ID]">[#]</td>
+            <th>[TITLE]</th>
+            <td>[PAGE_COUNT]</td>
+            <td>
+                <!-- BEGIN status_pending -->
+                <span class="label label-warning">Ожидает утверждения</span>
+                <!-- END status_pending -->
+                <!-- BEGIN status_accepted -->
+                <span class="label label-success">Утвержден</span>
+                <!-- END status_accepted -->
+                <!-- BEGIN status_rework -->
+                <span class="label label-danger">Отправлен на переделку</span>
+                <!-- END status_rework -->
+            </td>
+        </tr>
+        <!-- END section -->
+
+        </tbody>
+    </table>
+</div>

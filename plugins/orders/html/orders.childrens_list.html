@@ -1,0 +1,38 @@
+<button type="button" class="btn btn-success"
+        onclick="load('/?plugin=orders&order_id=[ORDER_ID]&action=childrens&edit=0');">Добавить</button>
+<br>
+<br>
+
+<div class="panel panel-default">
+    <table class="table table-responsive table-bordered table-striped">
+        <thead>
+        <tr>
+            <th width="1">№</th>
+            <th width="130">Класс/группа</th>
+            <th>Имя ученика</th>
+            <th width="170">Заказано альбомов</th>
+            <th>Дополнительно</th>
+            <th>Примечание</th>
+            <th width="1"></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!-- BEGIN children -->
+        <tr onclick="load('/?plugin=orders&order_id=[ORDER_ID]&action=childrens&edit=[CHILD_ID]');">
+            <td title="[CHILD_ID]">[#]</td>
+            <td>[GROUP_NAME]</td>
+            <th>[NAME]</th>
+            <td>[ALBUMS_COUNT]</td>
+            <td>[ADDITIONAL]</td>
+            <td>[COMMENT]</td>
+            <td onclick="event.cancelBubble = true">
+                <button type="button" class="btn btn-xs btn-warning"
+                        onclick="OrdersChildrens.deleteChildrens('[ORDER_ID]', '[CHILD_ID]')"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+        <!-- END children -->
+
+        </tbody>
+    </table>
+</div>

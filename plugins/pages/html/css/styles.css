@@ -1,0 +1,42 @@
+.agreement-content .mb-0{
+	margin-bottom:0;
+}
+
+.agreement-content p{
+	margin-bottom:20px;
+}
+
+.agreement-content{
+	font-size:16px;
+}
+
+.agreement-content h3{
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.agreement-content h2{
+	margin-bottom:20px;
+}
+
+
+.agreement-content ul{
+    margin-top: 7px;
+}
+
+.agreement-content ul li{
+	margin-bottom:10px;
+}
+
+.agreement-content .mb-100{
+	margin-bottom:100px;
+}
+
+
+.agreement-content .list-shrinked li{
+	margin-bottom:0;
+}
+
+.agreement-content .list-initial{
+	list-style-type:initial;
+}

@@ -1,0 +1,57 @@
+.order-header {
+    margin-bottom: 62px;
+}
+.order-header h1 {
+    margin-bottom: 31px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 41px;
+}
+.order-header h4 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.order-success-container,
+.order-fail-container {
+    border: 1px solid #0097e6;
+    padding: 60px 30px;
+    font-weight: 300;
+    line-height: 24px;
+}
+.order-success-container ul,
+.order-fail-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+.order-footer {
+    margin-top: 50px;
+}
+.order-footer .btn-link {
+    margin-top: 25px;
+}
+
+.btn-primary {
+    font-size: 16px;
+    height: 57px;
+    line-height: 57px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 6px;
+    transition: background .2s;
+}
+.btn-link {
+    color: #0097e6;
+    border-bottom: 1px solid #0097e6;
+    padding: 0;
+}
+.btn-link:focus,
+.btn-link:active,
+.btn-link:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #23527c;
+}
+.text-link {
+    color: #0097e6;
+    border-bottom: 1px solid #0097e6;
+}

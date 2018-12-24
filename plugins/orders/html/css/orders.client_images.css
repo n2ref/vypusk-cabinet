@@ -1,0 +1,108 @@
+.section {
+    margin-bottom: 60px;
+}
+.section h3 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.section h3 small {
+    line-height: 32px;
+}
+.section .section-page-text,
+.section .section-comment {
+    min-width: calc(100% - 30px);
+    max-width: calc(100% - 30px);
+    min-height: 80px;
+    height: 80px;
+}
+.page-image-container {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 125px;
+    width: 125px
+}
+.section-page-images img {
+    transition: none;
+    vertical-align: top;
+    max-width: 125px;
+    max-height: 125px;
+}
+
+
+.fileup-theme2 .fileup-file {
+    overflow: unset;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    padding: 0;
+}
+.fileup-theme2 .fileup-queue {
+    float: none;
+    display: inline;
+}
+.fileup-theme2 .fileup-file.fileup-image .fileup-container,
+.fileup-theme2 .fileup-file.fileup-doc .fileup-container {
+    margin-left: 0;
+    position: absolute;
+    bottom: 0;
+    padding: 0 8px 0 8px;
+    background-color: #00000073;
+    width: 100%;
+}
+.fileup-theme2 .fileup-file .fileup-container .fileup-name {
+    display: inline-block;
+    width: 100%;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #fff;
+    text-shadow: 1px 1px #4a4a4a;
+    height: 20px;
+    line-height: 20px;
+}
+.fileup-file .fileup-controls {
+     margin-top: 0;
+    margin-bottom: 4px;
+}
+.fileup-file .fileup-controls .fileup-upload,
+.fileup-file .fileup-controls .fileup-abort {
+    color: #BBDEFB;
+    text-shadow: 1px 1px #465156;
+}
+.fileup-theme2 .fileup-file .fileup-remove {
+    cursor: pointer;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #888;
+    border-radius: 100%;
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+    color: white;
+}
+.fileup-progress-bar {
+    background-color: #03A9F4;
+}
+.fileup-theme2 .fileup-file .fileup-result.fileup-error {
+    color: #FF9800;
+    position: static;
+    font-size: 10px;
+    background: none;
+    height: auto;
+    text-shadow: 0 0 #71321e;
+    margin-bottom: 6px;
+}
+.fileup-file .fileup-result.fileup-success {
+    color: #4cae4c;
+    font-size: 10px;
+    margin-bottom: 6px;
+    text-shadow: 1px 1px #003102;
+}

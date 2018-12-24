@@ -1,0 +1,69 @@
+
+<!-- BEGIN sections -->
+<div class="alert alert-info">
+    Если это необходимо, то заполните разделы альбома своими материалами и отправьте их нам на проверку <br> <br>
+    <button type="button" class="btn btn-info" onclick="OrdersClientImages.sendVerification('[ORDER_ID]');">Отправить на проверку</button>
+</div>
+<br>
+
+
+<div class="sections">
+
+    <!-- BEGIN section -->
+    <div class="section">
+        <h3>[SECTION_TITLE] <small class="pull-right">[COUNT_PAGES_TEXT]</small></h3>
+
+        <!-- BEGIN page -->
+        <h5>[PAGE]</h5>
+
+        <div class="page-container">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Фотографии</label>
+                    <div class="col-sm-9">
+                        <div class="section-page-images">
+                            <!-- BEGIN image -->
+                            <div class="page-image-container">
+                                <img class="img-thumbnail img-responsive" src="[SRC]" alt="[NAME]">
+                            </div>
+                            <!-- END image -->
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Текст на страницу</label>
+                    <div class="col-sm-9">
+                        <div class="form-control-static">[TEXT]</div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Комментарий</label>
+                    <div class="col-sm-9">
+                        <div class="form-control-static">[COMMENT]</div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <a href="/#plugin=orders&order_id=[ORDER_ID]&action=clients_images&section=[SECTION_NAME]&edit_page_num=[ID]"
+                           class="btn btn-info">Редактировать</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!-- END page -->
+    </div>
+    <!-- END section -->
+</div>
+<!-- END sections -->
+
+
+<!-- BEGIN no_sections -->
+<h3 class="text-center text-muted center-message">
+    Заказ пока не настроен до конца. <br>
+    <small>Подождите пожалуйста окончания настройки нашими администраторами</small>
+</h3>
+<!-- END no_sections -->
